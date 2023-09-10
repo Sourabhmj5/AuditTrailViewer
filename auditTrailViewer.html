@@ -1,0 +1,33 @@
+<!--
+  @description       : 
+  @author            : Sourabh Bhattacharjee
+  @group             : 
+  @last modified on  : 09-04-2023
+  @last modified by  : Sourabh Bhattacharjee 
+  Modifications Log
+  Ver   Date         Author                  Modification
+  1.0   09-04-2023   Sourabh Bhattacharjee   Initial Version
+-->
+<template>
+    <lightning-card>
+        <h3 slot="title">
+            <lightning-icon icon-name="utility:connected_apps"></lightning-icon>
+            Audit Log Viewer
+        </h3>
+        <div style="height:310px">
+          <lightning-datatable
+            data={records}
+            columns={columns}
+            key-field="Id"
+            hide-checkbox-column
+            show-row-number-column
+            enable-infinite-loading
+            onloadmore={loadMoreData}
+          >
+          </lightning-datatable>
+        </div>
+        <div slot="footer">
+          {error}
+        </div>
+    </lightning-card>
+</template>
